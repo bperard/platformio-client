@@ -13,12 +13,8 @@ function Messaging() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    // const now = new Date().toISOString();
-    // console.log(now.split('T')[0], now.split('T')[1].slice(0, 5));
-    // console.log(new Date().toLocaleTimeString());
-    // console.log(new Date().toLocaleDateString());
     socket.on('MESSAGE:ADD', (addMessage) => {
-      const date = new Date(); // .toDateString();
+      const date = new Date();
       // const user = users.filter(user => user.SID === addMessage.SID);
       setMessages(prevMessages => [...prevMessages, { ...addMessage, date }]); // user
     });
