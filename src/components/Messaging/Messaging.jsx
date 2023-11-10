@@ -32,7 +32,7 @@ function Messaging() {
 
   return (
     <>
-      <div>
+      <div className={styles.messageScrollContainer}>
         {messages.map(message => <div key={message.MID}>
           <p className={styles.message}>
             {message.message}
