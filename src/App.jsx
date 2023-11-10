@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import styles from './App.module.css';
 import './App.css';
 import { socket } from './service/socket';
-import styles from './App.module.css';
-import Input from './components/Button/Input';
+import Input from './components/Input/Input';
+import Messaging from './components/Messaging/Messaging';
 
 // import { io } from 'socket.io-client';
 // const socket = io('http://localhost:3000');
@@ -72,6 +73,7 @@ function App() {
           </>
           : null}
       </div>
+      <Messaging />
       <h1>Vite + React</h1>
       <div className="card">
         <label

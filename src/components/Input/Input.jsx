@@ -6,6 +6,9 @@ function Input({
   type,
   value,
   handleChange,
+  inputButtonToggle = false,
+  buttonText,
+  handleClick
 }) {
   return (
     <div>
@@ -22,6 +25,12 @@ function Input({
         onChange={(e) => handleChange(e.target.value)}
       >
       </input>
+      {inputButtonToggle ?
+        <button onClick={handleClick}>
+          {buttonText}
+        </button>
+        : null
+      }
     </div>
   );
 }
