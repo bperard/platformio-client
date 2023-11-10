@@ -11,7 +11,7 @@ import Messaging from './components/Messaging/Messaging';
 socket.emit('HEY');
 
 function App() {
-  const [name, setName] = useState('');
+  const [name, setName] = useState(false);
   const [createRoom, setCreateRoom] = useState('');
   const [roomName, setRoomName] = useState('');
   const [roomPassword, setRoomPassword] = useState('');
@@ -74,26 +74,6 @@ function App() {
           : null}
       </div>
       <Messaging />
-      <h1>Vite + React</h1>
-      <div className="card">
-        <label
-          htmlFor="name"
-        >
-          Name:
-        </label>
-        <input
-          name="name"
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-// import styles from './Messaging.module.css';
 import { socket } from '../../service/socket';
 import Input from '../Input/Input';
+import styles from './Messaging.module.css';
 
 socket.emit('MESSAGING RENDER');
 
@@ -34,8 +34,14 @@ function Messaging() {
     <>
       <div>
         {messages.map(message => <div key={message.MID}>
-          <p>
-            {message.SID}:{message.message} - {message.date.toLocaleTimeString()} {message.date.toLocaleDateString()}
+          <p className={styles.message}>
+            {message.message}
+          </p>
+          <p className={styles.messageInfo}>
+            <span className={styles.senderName}>
+              {message.SID}
+            </span>
+            {message.date.toLocaleTimeString()} - {message.date.toLocaleDateString()}
           </p>
         </div>)}
       </div>
